@@ -3,14 +3,17 @@
 
 * Parent -> Child 
 
-app.component.ts
+parent.component.ts  
+```javascript
+serverElements = [{type:'server',name:'TestServer',content:'Just a Test!'}];
 ```
-export class AppComponent {
-  serverElements = [{type:'server',name:'TestServer',content:'Just a Test!'}];
-}
-```
-app.component.html
-```
+
+parent.component.html  
+```javascript
 <app-server-element  [element]="serverElements"></app-server-element>
 ```
 
+clild.component.ts
+```javascript
+@Input() element:{type: string, name:string, content: string}
+```
