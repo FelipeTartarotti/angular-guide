@@ -142,15 +142,15 @@ ngAfterViewInit(){
 </div>
 ```
 ------------------------------------------------------------------------------
-* CUSTOM DIRECTIVE
+* CUSTOM DIRECTIVE (This directive changes the color of the p element)
 
 better-highlight.directive.ts
 ```javascript
 import {Directive,Renderer2,OnInit,ElementRef,HostListener,HostBinding,Input} from '@angular/core';
 @Directive({
-  selector: '[appBetterHighlight]'
+  selector: '[appHighlight]'
 })
-export class BetterHighlightDirective implements OnInit {
+export class HighlightDirective implements OnInit {
 
   @Input() defaultColor: string; //receives the yellow color
   @Input() highlightColor: string; //receives the red color 
@@ -171,6 +171,6 @@ export class BetterHighlightDirective implements OnInit {
 ```
 app.component.html
 ```javascript
-<p appBetterHighlight  defaultColor="yellow" highlightColor="Red">Style me with a better directive!</p>
+<p appHighlight  defaultColor="yellow" highlightColor="Red">Style me with a better directive!</p>
 ```
 ------------------------------------------------------------------------------
