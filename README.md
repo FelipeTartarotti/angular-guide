@@ -120,5 +120,60 @@ ngAfterViewInit(){
 
 ```
 ------------------------------------------------------------------------------
+<h4>Directives</h4>
 
+*FOR
+```javascript
+ <div *ngFor="let list of lists" >
+ </div>
+```
+------------------------------------------------------------------------------
+*IF
+```javascript
+ <div *ngIf="condition">
+   
+ </div>
+```
+------------------------------------------------------------------------------
+* SWITCH
+```javascript
+ <div [ngSwitch]="value">
+    <p *ngSwitchCase="5">Value is 5</p>
+    <p *ngSwitchCase="10">Value is 10</p>
+    <p *ngSwitchCase="100">Value is 100</p>
+    <p *ngSwitchDefault>Value is Default</p>
+</div>
+```
+------------------------------------------------------------------------------
+* CUSTOM DIRECTIVE
 
+better-highlight.directive.ts
+```javascript
+import {Directive,Renderer2,OnInit,ElementRef,HostListener,HostBinding,Input} from '@angular/core';
+@Directive({
+  selector: '[appBetterHighlight]'
+})
+export class BetterHighlightDirective implements OnInit {
+
+  @Input() defaultColor: string; //receives the yellow color
+  @Input() highlightColor: string; //receives the red color 
+  @HostBinding('style.backgroundColor') backgroundColor: string; //atribute selector we want to change
+ 
+  constructor(private elRef: ElementRef, private renderer: Renderer2) { }
+  
+  ngOnInit() {
+    this.backgroundColor = this.defaultColor; //initiate with defaulColor
+  }
+  @HostListener('mouseenter') mouseover(eventData: Event) { //activate when mouse is over 
+    this.backgroundColor = this.highlightColor;
+  }
+  @HostListener('mouseleave') mouseleave(eventData: Event) { //activate when mouse leave 
+    this.backgroundColor = this.defaultColor;
+  }
+}
+```
+app.component.html
+```javascript
+<p appBetterHighlight  defaultColor="yellow" highlightColor="Red">Style me with a better directive!</p>
+```
+------------------------------------------------------------------------------
