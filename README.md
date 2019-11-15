@@ -20,7 +20,7 @@ clild.component.ts
 @Input() childElement:{type: string, name:string, content: string}
 ```
 
-----------------------------------------
+------------------------------------------------------------------------------
 
 * <h4>CHILD -> PARENT</h4>
 
@@ -49,5 +49,6 @@ parentReceives(personData:{name:string, surname:string}) {
 }
   
 ```
+------------------------------------------------------------------------------
 
 
