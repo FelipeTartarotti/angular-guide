@@ -2,7 +2,7 @@
 
 <h3>Component Communication<h3>
 
-<h4>PARENT -> CHILD<h4>
+<h4><b>PARENT -> CHILD</b><h4>
 
 parent.component.ts  
 ```javascript
