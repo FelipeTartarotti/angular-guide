@@ -59,6 +59,42 @@ parentReceives(personData:{name:string, surname:string}) {
   
 ```
 ------------------------------------------------------------------------------
+<h4>CROSS-COMPONENTS COMMUNICATION (EventEmitter)</h4>
+oneComponent.component.ts
+```javascript
+...
+import { BetweenService } from '../between.service';
+
+export class OneComponent {
+  constructor(private betweenService: BetweenService) {}
+  sendEvent(status: string) {
+    this.betweenService.statusUpdated.emit(status); //emit the string called status to the service
+  }
+}
+```
+
+between.service.ts
+```javascript
+...
+statusUpdated = new EventEmitter<string>();
+```
+
+twoComponent.component.ts
+```javascript
+...
+import { BetweenService } from '../between.service';
+
+export class TwoComponent {
+  constructor(private betweenService: BetweenService) {
+    
+    this.betweenService.statusUpdated.subscribe(   //receives the event from the service
+      (status: string) => alert('New Status: ' + status)
+    );
+    
+  }  
+}
+```
+------------------------------------------------------------------------------
 
 <h4>Lifecycles<h4>
   
