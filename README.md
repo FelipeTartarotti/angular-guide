@@ -20,8 +20,11 @@ clild.component.ts
 @Input() childElement:{type: string, name:string, content: string}
 ```
 
+----------------------------------------
+
 * <h4>CHILD -> PARENT</h4>
-  
+
+
 child.component.ts
 ```javascript
 @Output() childElement = new EventEmitter<{name:string, surname:string}>();
