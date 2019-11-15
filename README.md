@@ -1,7 +1,7 @@
 <h3>Angular guide with the main features.</h3>
 <h4>Component Communication<h4>
 
-* Parent -> Child 
+*PARENT -> CHILD 
 
 parent.component.ts  
 ```javascript
