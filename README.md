@@ -14,26 +14,26 @@ parent.component.html
 <app-child  [childElement]="parentElements"></app-child>
 ```
 
-clild.component.ts
+child.component.ts
 ```javascript
 @Input() childElement:{type: string, name:string, content: string}
 ```
 
 ------------------------------------------------------------------------------
 <h4>PARENT HTML -> CHILD HTML (Projecting content)</h4> 
+OBS: If you want to access the value in child.component.ts, see ContentChild in this guide.
 
 parent.component.html  
 ```javascript
 <app-child> <p>This will be shown in the HTML of the clild.component</p> </app-child>
 ```
 
-clild.component.html
+child.component.html
 ```javascript
 <ng-content></ng-content> <!-- Everything inner the app-child tag will be shown here   -->
 ```
 ------------------------------------------------------------------------------
 <h4>CHILD -> PARENT</h4>
-
 
 child.component.ts
 ```javascript
@@ -43,7 +43,6 @@ this.childElement.emit({
   name: 'Felipe',
   surname: 'Tartarotti'
 });
-
 ```
 parent.component.html
 ```javascript
@@ -83,14 +82,14 @@ ngOnDestroy ---> Called once the component is about to be destroyed
 
 <h4>ViewChild and ContentChild</h4>
 
-#ViewChild
+#ViewChild - Light DOM
 
-clild.component.html
+child.component.html
 ```javascript
 <p #text> This will be in child.componente.ts</p>
 ```
 
-clild.component.ts
+child.component.ts
 ```javascript
 @ViewChild('text', {static: true}) text: ElementRef;
 
@@ -99,19 +98,19 @@ ngAfterViewInit(){
 }
 ```
 ------------------------------------------------------------------------------
-#ContentChild
+#ContentChild - Shadow DOM
 
 parent.component.html  
 ```javascript
 <app-child> <p #text> This will be in child.componente.ts</p> </app-child>
 ```
 
-clild.component.html
+child.component.html
 ```javascript
 <ng-content></ng-content> <!-- Everything inner the app-child tag will be shown here   -->
 ```
 
-clild.component.ts
+child.component.ts
 ```javascript
 @ContentChild('text', {static: true}) text: ElementRef;
 
