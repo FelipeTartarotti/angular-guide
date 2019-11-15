@@ -21,7 +21,18 @@ clild.component.ts
 ```
 
 ------------------------------------------------------------------------------
+* <h4>PARENT HTML -> CHILD HTML</h4> (Using ng-content)
 
+parent.component.html  
+```javascript
+<app-child> This will be shown in the HTML of the clild.component </app-child>
+```
+
+clild.component.html
+```javascript
+<ng-content></ng-content> <!-- Everything inner the app-child tag will be shown here   -->
+```
+------------------------------------------------------------------------------
 * <h4>CHILD -> PARENT</h4>
 
 
