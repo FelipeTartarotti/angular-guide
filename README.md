@@ -1,8 +1,8 @@
 <h2>Angular guide with the main features.</h2>
 
-:red_circle: <h3>Component Communication<h3>
+<h3>Component Communication<h3>
 
-:large_blue_circle:<h4>PARENT -> CHILD</h4>
+- <h4>PARENT -> CHILD</h4>
 
 parent.component.ts  
 ```javascript
