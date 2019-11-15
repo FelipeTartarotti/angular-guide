@@ -1,12 +1,9 @@
 <h2>Angular guide with the main features.</h2>
 
-<h3>Component Communication<h3>
+:red_circle: <h3>Component Communication<h3>
 
+:large_blue_circle:<h4>PARENT -> CHILD</h4>
 
-
-``
-![#f03c15](<h4>PARENT -> CHILD<h4>)
-``
 parent.component.ts  
 ```javascript
 parentElements = [{type:'server',name:'TestServer',content:'Just a Test!'}];
@@ -21,7 +18,8 @@ clild.component.ts
 ```javascript
 @Input() childElement:{type: string, name:string, content: string}
 ```
-![#f03c15](<h4>CHILD -> PARENT<h4>)
+
+<h4>CHILD -> PARENT<h4>
   
 child.component.ts
 ```javascript
