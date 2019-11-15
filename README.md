@@ -124,15 +124,12 @@ ngAfterViewInit(){
 
 *FOR
 ```javascript
- <div *ngFor="let list of lists" >
- </div>
+ <div *ngFor="let item of items; let i = index"></div>
 ```
 ------------------------------------------------------------------------------
 *IF
 ```javascript
- <div *ngIf="condition">
-   
- </div>
+ <div *ngIf="condition"></div>
 ```
 ------------------------------------------------------------------------------
 * SWITCH
