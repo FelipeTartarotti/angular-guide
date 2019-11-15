@@ -2,8 +2,11 @@
 
 <h3>Component Communication<h3>
 
-![#f03c15](<h4>PARENT -> CHILD<h4>)
 
+
+``
+![#f03c15](<h4>PARENT -> CHILD<h4>)
+``
 parent.component.ts  
 ```javascript
 parentElements = [{type:'server',name:'TestServer',content:'Just a Test!'}];
