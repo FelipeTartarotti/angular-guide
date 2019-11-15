@@ -2,7 +2,8 @@
 
 <h3>Component Communication<h3>
 
-- <h4>PARENT -> CHILD</h4>
+
+* <h4>PARENT -> CHILD</h4>
 
 parent.component.ts  
 ```javascript
@@ -19,7 +20,7 @@ clild.component.ts
 @Input() childElement:{type: string, name:string, content: string}
 ```
 
-<h4>CHILD -> PARENT<h4>
+* <h4>CHILD -> PARENT</h4>
   
 child.component.ts
 ```javascript
