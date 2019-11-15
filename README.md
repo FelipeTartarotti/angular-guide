@@ -25,7 +25,7 @@ clild.component.ts
 
 parent.component.html  
 ```javascript
-<app-child> This will be shown in the HTML of the clild.component </app-child>
+<app-child> <p>This will be shown in the HTML of the clild.component</p> </app-child>
 ```
 
 clild.component.html
