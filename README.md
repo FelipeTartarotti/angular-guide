@@ -144,7 +144,7 @@ ngAfterViewInit(){
 ------------------------------------------------------------------------------
 * CUSTOM DIRECTIVE (This directive changes the color of the p element)
 
-better-highlight.directive.ts
+highlight.directive.ts
 ```javascript
 import {Directive,Renderer2,OnInit,ElementRef,HostListener,HostBinding,Input} from '@angular/core';
 @Directive({
@@ -174,3 +174,29 @@ app.component.html
 <p appHighlight  defaultColor="yellow" highlightColor="Red">Style me with a better directive!</p>
 ```
 ------------------------------------------------------------------------------
+* CUSTOM DIRECTIVE (This directive hides elements)
+
+unless.directive.ts
+```javascript
+import { Directive, Input, TemplateRef, ViewContainerRef } from '@angular/core';
+@Directive({
+  selector: '[appUnless]'
+})
+export class UnlessDirective {
+  @Input() set appUnless(condition: boolean) { //create the name of the Directive
+    if (condition) {
+      this.vcRef.createEmbeddedView(this.templateRef); //Show the elements
+    } else {
+      this.vcRef.clear(); //Hide the elements
+    }
+  }
+  constructor(private templateRef: TemplateRef<any>, private vcRef: ViewContainerRef) { }
+}
+
+```
+app.component.html
+```javascript
+ <div *appUnless="condition">
+   <p>Show if condition is True</p>
+ </div>
+```
