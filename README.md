@@ -4,16 +4,16 @@
 * Parent -> Child 
 
 parent.component.ts  
-```angular
-serverElements = [{type:'server',name:'TestServer',content:'Just a Test!'}];
+```javascript
+parentElements = [{type:'server',name:'TestServer',content:'Just a Test!'}];
 ```
 
 parent.component.html  
-```angular
-<app-server-element  [element]="serverElements"></app-server-element>
+```javascript
+<app-child  [childElement]="parentElements"></app-child>
 ```
 
 clild.component.ts
-```angular
-@Input() element:{type: string, name:string, content: string}
+```javascript
+@Input() childElement:{type: string, name:string, content: string}
 ```
