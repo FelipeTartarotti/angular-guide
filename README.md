@@ -81,4 +81,45 @@ ngOnDestroy ---> Called once the component is about to be destroyed
 
 ------------------------------------------------------------------------------
 
+<h4>ViewChild and ContentChild</h4>
+
+#ViewChild
+
+clild.component.html
+```javascript
+<p #text> This will be in child.componente.ts</p>
+```
+
+clild.component.ts
+```javascript
+@ViewChild('text', {static: true}) text: ElementRef;
+
+ngAfterViewInit(){
+  console.log(this.text); //This will be in child.componente.ts
+}
+```
+------------------------------------------------------------------------------
+#ContentChild
+
+parent.component.html  
+```javascript
+<app-child> <p #text> This will be in child.componente.ts</p> </app-child>
+```
+
+clild.component.html
+```javascript
+<ng-content></ng-content> <!-- Everything inner the app-child tag will be shown here   -->
+```
+
+clild.component.ts
+```javascript
+@ContentChild('text', {static: true}) text: ElementRef;
+
+ngAfterViewInit(){
+  console.log(this.text); //This will be in child.componente.ts
+}
+
+```
+------------------------------------------------------------------------------
+
 
