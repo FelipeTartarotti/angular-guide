@@ -1,7 +1,7 @@
 <h2>Angular guide with the main features.</h2>
 
 <h3>Component Communication<h3>
-------------------------------------------------------------------------------
+  
 <h4>PARENT -> CHILD</h4>
 
 parent.component.ts  
@@ -32,7 +32,7 @@ clild.component.html
 <ng-content></ng-content> <!-- Everything inner the app-child tag will be shown here   -->
 ```
 ------------------------------------------------------------------------------
-* <h4>CHILD -> PARENT</h4>
+<h4>CHILD -> PARENT</h4>
 
 
 child.component.ts
