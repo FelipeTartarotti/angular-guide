@@ -60,9 +60,9 @@ parentReceives(personData:{name:string, surname:string}) {
 ```
 ------------------------------------------------------------------------------
 <h4>CROSS-COMPONENTS COMMUNICATION (EventEmitter)</h4>
+
 oneComponent.component.ts
 ```javascript
-...
 import { BetweenService } from '../between.service';
 
 export class OneComponent {
@@ -75,13 +75,11 @@ export class OneComponent {
 
 between.service.ts
 ```javascript
-...
 statusUpdated = new EventEmitter<string>();
 ```
 
 twoComponent.component.ts
 ```javascript
-...
 import { BetweenService } from '../between.service';
 
 export class TwoComponent {
