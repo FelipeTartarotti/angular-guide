@@ -21,7 +21,7 @@ clild.component.ts
 ```
 
 ------------------------------------------------------------------------------
-* <h4>PARENT HTML -> CHILD HTML</h4> 
+* <h4>Projecting content PARENT HTML -> CHILD HTML</h4> 
 
 parent.component.html  
 ```javascript
