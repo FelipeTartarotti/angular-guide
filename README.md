@@ -64,7 +64,7 @@ parentReceives(personData:{name:string, surname:string}) {
 
 <h3>Lifecycles<h3>
   
-ngOnChanges - Called after a bound input property changes
+ngOnChanges - <p>Called after a bound input property changes</p>
 ngOnInit - Called once the component is initialized
 ngDoCheck - Called during every change detection run
 ngAfterContentInit - Called after content (ng-content) has been projected into view
