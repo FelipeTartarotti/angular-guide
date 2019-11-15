@@ -2,7 +2,7 @@
 
 <h3>Component Communication<h3>
 
-<h4>PARENT -> CHILD<h4>
+![#f03c15](<h4>PARENT -> CHILD<h4>)
 
 parent.component.ts  
 ```javascript
@@ -18,7 +18,7 @@ clild.component.ts
 ```javascript
 @Input() childElement:{type: string, name:string, content: string}
 ```
-<h4>CHILD -> PARENT<h4>
+![#f03c15](<h4>CHILD -> PARENT<h4>)
   
 child.component.ts
 ```javascript
@@ -44,5 +44,5 @@ parentReceives(personData:{name:string, surname:string}) {
 }
   
 ```
-![#1589F0](123)
+
 
