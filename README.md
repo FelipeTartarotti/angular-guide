@@ -1,9 +1,8 @@
 <h2>Angular guide with the main features.</h2>
 
 <h3>Component Communication<h3>
-
-
-* <h4>PARENT -> CHILD</h4>
+------------------------------------------------------------------------------
+<h4>PARENT -> CHILD</h4>
 
 parent.component.ts  
 ```javascript
@@ -21,7 +20,7 @@ clild.component.ts
 ```
 
 ------------------------------------------------------------------------------
-* <h4>PARENT HTML -> CHILD HTML (Projecting content)</h4> 
+<h4>PARENT HTML -> CHILD HTML (Projecting content)</h4> 
 
 parent.component.html  
 ```javascript
@@ -62,7 +61,7 @@ parentReceives(personData:{name:string, surname:string}) {
 ```
 ------------------------------------------------------------------------------
 
-<h3>Lifecycles<h3>
+<h4>Lifecycles<h4>
   
 ngOnChanges --->  Called after a bound input property changes
 
