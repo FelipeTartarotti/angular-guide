@@ -93,6 +93,47 @@ export class TwoComponent {
 }
 ```
 ------------------------------------------------------------------------------
+<h4>CROSS-COMPONENTS COMMUNICATION (rxjs)</h4>
+
+oneComponent.component.ts
+```javascript
+import { BetweenService } from '../between.service';
+
+export class OneComponent {
+  constructor(private betweenService: BetweenService) {}
+  sendEvent(status: string) {
+    this.betweenService.statusUpdated.next(status); //emit the string called status to the service
+  }
+}
+```
+
+between.service.ts
+```javascript
+import { Subject } from 'rxjs';
+
+statusUpdated = new Subject<string>();
+```
+
+twoComponent.component.ts
+```javascript
+import { BetweenService } from '../between.service';
+
+export class TwoComponent {
+  constructor(private betweenService: BetweenService) {
+   
+   private activatedSub: Subscription;  
+   
+    this.activatedSub = this.betweenService.statusUpdated.subscribe(status => {
+      alert('New Status: ' + status)
+    });
+    
+    ngOnDestroy(): void {    
+      this.activatedSub.unsubscribe();   //It's important to unsubscribe to avoid memory leaks.
+    }
+  }  
+}
+```
+------------------------------------------------------------------------------
 
 <h4>Lifecycles<h4>
   
