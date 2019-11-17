@@ -282,11 +282,6 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 import { interval, Subscription, Observable } from 'rxjs';
 import { map, filter } from 'rxjs/operators';
 
-@Component({
-  selector: 'app-home',
-  templateUrl: './home.component.html',
-  styleUrls: ['./home.component.css']
-})
 export class HomeComponent implements OnInit, OnDestroy {
   private firstObsSubscription: Subscription;
 
@@ -309,7 +304,7 @@ export class HomeComponent implements OnInit, OnDestroy {
       }, 1000);
     });
 
-
+   //SUBSCRIBE WITH OPERATORS
     this.firstObsSubscription = customIntervalObservable.pipe(filter(data => { //Subscribe to customIntervalObservable
       return data > 0; //FILTER, it has to return true or false to cotinuos
     }), map((data: number) => {  // MAP, data can be treated before cotinuos
@@ -322,10 +317,21 @@ export class HomeComponent implements OnInit, OnDestroy {
     }, () => {
       console.log('Completed!');
     });
+    
+    //SUBSCRIBE WITHOUT OPERATORS
+    this.firstObsSubscription = customIntervalObservable.subscribe(data => {
+      console.log(data);
+    }, error => {
+      console.log(error);
+      alert(error.message);
+    }, () => {
+      console.log('Completed!');
+    });
+   
   }
 
   ngOnDestroy(): void {  
-    this.firstObsSubscription.unsubscribe(); 
+    this.firstObsSubscription.unsubscribe();  // Unsubscribe to avoid memory leaks
   }
 
 }
