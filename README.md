@@ -217,7 +217,7 @@ ngAfterViewInit(){
 </div>
 ```
 ------------------------------------------------------------------------------
-* CUSTOM DIRECTIVE (This directive changes the color of the p element)
+<h4> CUSTOM DIRECTIVE (This directive changes the color of the p element)</h4> 
 
 highlight.directive.ts
 ```javascript
@@ -249,7 +249,7 @@ app.component.html
 <p appHighlight  defaultColor="yellow" highlightColor="Red">Style me with a better directive!</p>
 ```
 ------------------------------------------------------------------------------
-* CUSTOM DIRECTIVE (This directive hides elements)
+<h4>CUSTOM DIRECTIVE (This directive hides elements)</h4> 
 
 unless.directive.ts
 ```javascript
@@ -276,7 +276,7 @@ app.component.html
  </div>
 ```
 ------------------------------------------------------------------------------
-* CUSTOM OBSERVABLE (
+<h4>CUSTOM OBSERVABLE</h4> 
 ```javascript
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { interval, Subscription, Observable } from 'rxjs';
@@ -334,5 +334,42 @@ export class HomeComponent implements OnInit, OnDestroy {
     this.firstObsSubscription.unsubscribe();  // Unsubscribe to avoid memory leaks
   }
 
+}
+```
+------------------------------------------------------------------------------
+<h4>CUSTOM PIPES</h4> 
+
+app.component.ts
+```
+public name = "Felipe Tartarotti"  //Property receives the string
+```
+
+
+app.component.html
+```
+<strong>{{ name | shorten : 6 }}</strong>  //Property is placed right beside the pipe
+                                           //ADD ":" and the value to send other property to ShortenPipe
+                                           
+```
+app.component.html (output)
+```
+<strong>Felipe</strong> 
+```
+shorten.pipe.ts
+```
+import { Pipe, PipeTransform } from '@angular/core';
+
+@Pipe({
+  name: 'shorten'
+})
+export class ShortenPipe implements PipeTransform {  //Value receives the property name and 
+                                                     //Limit receives the number ->>> (shorten : 6) 
+  transform(value: any, limit: number) {              
+        
+    if (value.length > limit) {
+      return value.substr(0, limit);
+    }
+    return value;  //Return the value with 6 characteres
+  }
 }
 ```
