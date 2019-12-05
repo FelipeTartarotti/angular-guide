@@ -344,19 +344,18 @@ app.component.ts
 public name = "Felipe Tartarotti"  //Property receives the string
 ```
 
-
 app.component.html
 ```
-<strong>{{ name | shorten : 6 }}</strong>  //Property is placed right beside the pipe
-                                           //ADD ":" and the value to send other property to ShortenPipe
-                                           
+<div>{{ name | shorten : 6 }}</div>  //Property is placed right beside the pipe
+                                      //ADD ":" and the value to send other property to ShortenPipe                                        
 ```
+
 app.component.html (output)
 ```
-<strong>Felipe</strong> 
+<div>Felipe</div> 
 ```
 shorten.pipe.ts
-```
+```javascript
 import { Pipe, PipeTransform } from '@angular/core';
 
 @Pipe({
