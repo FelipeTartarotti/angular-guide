@@ -329,11 +329,9 @@ export class HomeComponent implements OnInit, OnDestroy {
     });
    
   }
-
   ngOnDestroy(): void {  
     this.firstObsSubscription.unsubscribe();  // Unsubscribe to avoid memory leaks
   }
-
 }
 ```
 ------------------------------------------------------------------------------
