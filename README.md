@@ -343,13 +343,13 @@ public name = "Felipe Tartarotti"  //Property receives the string
 ```
 
 app.component.html
-```html
-<div>{{ name | shorten : 6 }}</div>  <!--Property is placed right beside the pipe-->  
-                                     <!-- ADD ":" and the value to send other property-->                                      
+```javascript
+<div>{{ name | shorten : 6 }}</div>  //Property is placed right beside the pipe-->  
+                                     //ADD ":" and the value to send other property-->                                      
 ```
 
 app.component.html (output)
-```html
+```javascript
 <div>Felipe</div> 
 ```
 shorten.pipe.ts
