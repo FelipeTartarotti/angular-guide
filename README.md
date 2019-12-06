@@ -340,14 +340,14 @@ export class HomeComponent implements OnInit, OnDestroy {
 <h4>CUSTOM PIPES</h4> 
 
 app.component.ts
-```
+```javascript
 public name = "Felipe Tartarotti"  //Property receives the string
 ```
 
 app.component.html
 ```html
 <div>{{ name | shorten : 6 }}</div>  <!--Property is placed right beside the pipe-->  
-                                     <!-- ADD ":" and the value to send other property to ShortenPipe  -->                                      
+                                     <!-- ADD ":" and the value to send other property-->                                      
 ```
 
 app.component.html (output)
