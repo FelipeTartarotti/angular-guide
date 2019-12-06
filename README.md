@@ -337,6 +337,7 @@ export class HomeComponent implements OnInit, OnDestroy {
 }
 ```
 ------------------------------------------------------------------------------
+
 <h4>CUSTOM PIPES</h4> 
 
 app.component.ts
