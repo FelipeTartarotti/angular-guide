@@ -304,8 +304,7 @@ export class HomeComponent implements OnInit, OnDestroy {
       }, 1000);
     });
 
-   //SUBSCRIBE WITH OPERATORS
-    this.firstObsSubscription = customIntervalObservable.pipe(filter(data => { //Subscribe to customIntervalObservable
+    this.firstObsSubscription = customIntervalObservable.pipe(filter(data => {  //SUBSCRIBE WITH OPERATORS
       return data > 0; //FILTER, it has to return true or false to cotinuos
     }), map((data: number) => {  // MAP, data can be treated before cotinuos
       return 'Round: ' + (data + 1);
@@ -318,8 +317,8 @@ export class HomeComponent implements OnInit, OnDestroy {
       console.log('Completed!');
     });
     
-    //SUBSCRIBE WITHOUT OPERATORS
-    this.firstObsSubscription = customIntervalObservable.subscribe(data => {
+    
+    this.firstObsSubscription = customIntervalObservable.subscribe(data => { //SUBSCRIBE WITHOUT OPERATORS
       console.log(data);
     }, error => {
       console.log(error);
