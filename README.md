@@ -326,15 +326,14 @@ export class HomeComponent implements OnInit, OnDestroy {
     }, () => {
       console.log('Completed!');
     });
-  }
-  ngOnDestroy(): void {  
-    this.firstObsSubscription.unsubscribe();  // Unsubscribe to avoid memory leaks
-  }
+  }  
 }
 ```
-
-
-------------------------------------------------------------------------------
+```javascript
+ ngOnDestroy(): void {  
+    this.firstObsSubscription.unsubscribe();  // Unsubscribe to avoid memory leaks
+ }
+```
 
 <h4>CUSTOM PIPES</h4> 
 
@@ -370,4 +369,10 @@ export class ShortenPipe implements PipeTransform {  //Value receives the proper
     return value;  //Return the value with 6 characteres
   }
 }
+```
+<h4>CHAINING PIPES</h4> 
+
+Pipes can be chained and they will take efect from left to rigth
+```javascript
+{{property | date:"fullDate" | uppercase}} 
 ```
