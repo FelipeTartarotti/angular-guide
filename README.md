@@ -278,18 +278,7 @@ app.component.html
 ------------------------------------------------------------------------------
 <h4>CUSTOM OBSERVABLE</h4> 
 ```javascript
-import { Component, OnDestroy, OnInit } from '@angular/core';
-import { interval, Subscription, Observable } from 'rxjs';
-import { map, filter } from 'rxjs/operators';
 
-export class HomeComponent implements OnInit, OnDestroy {
-  private firstObsSubscription: Subscription;
-
-  constructor() {
-  }
-
-  ngOnInit() {
- 
     const customIntervalObservable = Observable.create(observer => {
       let count = 0;
       setInterval(() => {
@@ -326,8 +315,6 @@ export class HomeComponent implements OnInit, OnDestroy {
     }, () => {
       console.log('Completed!');
     });
-  }  
-}
 ```
 ```javascript
  ngOnDestroy(): void {  
