@@ -277,7 +277,7 @@ app.component.html
 ```
 ------------------------------------------------------------------------------
 <h4>CUSTOM OBSERVABLE</h4> 
-```
+```javascript
     const customIntervalObservable = Observable.create(observer => {
       let count = 0;
       setInterval(() => {
