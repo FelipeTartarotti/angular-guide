@@ -363,4 +363,6 @@ export class ShortenPipe implements PipeTransform {  //Value receives the proper
 Pipes can be chained and they will take efect from left to rigth
 ```javascript
 {{property | date:"fullDate" | uppercase}} 
+
+{{today | date | uppercase | slice:0:4}}
 ```
