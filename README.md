@@ -315,7 +315,7 @@ app.component.html
     }, () => {
       console.log('Completed!');
     });
-
+```
  ngOnDestroy(): void {  
     this.firstObsSubscription.unsubscribe();  // Unsubscribe to avoid memory leaks
  }
@@ -356,6 +356,7 @@ export class ShortenPipe implements PipeTransform {  //Value receives the proper
   }
 }
 ```
+
 <h4>CHAINING PIPES</h4> 
 
 Pipes can be chained and they will take efect from left to rigth
