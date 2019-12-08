@@ -315,8 +315,7 @@ app.component.html
     }, () => {
       console.log('Completed!');
     });
-```
-```javascript
+
  ngOnDestroy(): void {  
     this.firstObsSubscription.unsubscribe();  // Unsubscribe to avoid memory leaks
  }
