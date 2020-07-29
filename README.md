@@ -112,6 +112,8 @@ between.service.ts
 import { Subject } from 'rxjs';
 
 statusUpdated = new Subject<string>();
+
+//statusUpdated = new BehaviorSubject({});
 ```
 
 twoComponent.component.ts
